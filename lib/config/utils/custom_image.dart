@@ -19,7 +19,7 @@ class MyImage{
   static String historyIcon="assets/icons/historyicon.svg";
   static String homeIcon="assets/icons/homeicon.svg";
   static String kiloMeterIcon="assets/icons/kmmeter.svg";
-  static String locationIconOne="assets/icons/locationicon.svg";
+  static String locationIconOne="assets/images/locationicon.png";
   static String locationIconTwo="assets/icons/locationtwoicon.svg";
   static String logOutIcon="assets/icons/Logout.svg";
   static String loveIcon="assets/icons/loveicon.svg";
@@ -60,4 +60,7 @@ class MyImage{
   static String wellCome="assets/images/wellcomescreen.png";
   static String whiteCar="assets/images/whitecar.png";
   static String whiteCarTwo="assets/images/whitecartwo.png";
+  static String backIconarrow="assets/images/backIconarrow.png";
+  static String mapImage="assets/images/mapimage.JPG";
+  static String location="assets/images/locationicon.png";
 }
