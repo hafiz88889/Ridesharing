@@ -63,4 +63,19 @@ class MyImage{
   static String backIconarrow="assets/images/backIconarrow.png";
   static String mapImage="assets/images/mapimage.JPG";
   static String location="assets/images/locationicon.png";
+  static String backIcontop="assets/images/backIcon.png";
+  static String bdFlag="assets/images/bdflag.png";
+  static String backIconDown="assets/images/backIcondown.png";
+  static String line="assets/images/line.png";
+  static String gmail="assets/images/gmail.png";
+  static String faceBookIcon="assets/images/Facebook.png";
+  static String apple="assets/images/Apple.png";
+  static String visibilityoff="assets/images/visibilityofficon.png";
+  static String camera="assets/images/cameraicon.png";
+  static String map="assets/images/map.png";
+  static String menu="assets/images/menu.png";
+  static String notification="assets/images/notificationicon.png";
+  static String direction="assets/images/directionIcon.png";
+  static String search="assets/images/searchimage.png";
+  static String love="assets/images/loveicon.png";
 }

@@ -25,7 +25,7 @@ class EnableLocationPage extends StatelessWidget {
                         width: 100,
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: MyColor.mainColor.withAlpha(20)
+                            color: MyColor.primaryColor.withAlpha(20)
                         ),
                         child: Container(
                           padding: const EdgeInsets.all(7),
@@ -33,19 +33,19 @@ class EnableLocationPage extends StatelessWidget {
                           width: 100,
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: MyColor.mainColor.withAlpha(50)
+                              color: MyColor.primaryColor.withAlpha(50)
                           ),
                           child: Container(
                             padding: const EdgeInsets.all(7),
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: MyColor.mainColor.withAlpha(80)
+                                color: MyColor.primaryColor.withAlpha(80)
                             ),
                             child: Container(
                                 padding: const EdgeInsets.all(7),
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
-                                    color: MyColor.mainColor
+                                    color: MyColor.primaryColor
                                 ),
                                 child: Image(image: AssetImage(MyImage.location),height: 15,width: 15,color: MyColor.textColor,)
                             ),
@@ -70,7 +70,7 @@ class EnableLocationPage extends StatelessWidget {
                       const SizedBox(height: 35,),
                       TextButton(onPressed: (){
                         Navigator.pushNamed(context,"/WellcomePage");
-                      }, child: Text("Skip for now",style: regularTextStyleHintText16,))
+                      }, child: Text("Skip for now",style: regularTextStyleHintText16.copyWith(color: MyColor.visibilityTextColor),))
                     ],
                   ),
                 ),

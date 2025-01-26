@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MyColor{
   static Color redColor =const Color(0xffff0000);
-  static Color mainColor =const Color(0xff08B783);
+  static Color primaryColor =const Color(0xff08B783);
   static Color buttonColor =const Color(0xff008955);
   static Color textColor =const Color(0xff414141);
   static Color normalTextColor =const Color(0xffA0A0A0);
