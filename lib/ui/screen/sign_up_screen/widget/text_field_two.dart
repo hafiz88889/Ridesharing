@@ -16,7 +16,10 @@ class TextFieldWidgetTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-        prefixIcon:icons,
+        prefixIcon:Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: icons,
+        ),
           suffixIcon: icon,
           focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: MyColor.visibilityTextColor)),
           hintText:title,hintStyle: regularTextStyleHintText16 ,

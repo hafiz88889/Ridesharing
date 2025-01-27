@@ -78,4 +78,5 @@ class MyImage{
   static String direction="assets/images/directionIcon.png";
   static String search="assets/images/searchimage.png";
   static String love="assets/images/loveicon.png";
+  static String closeIocn="assets/icons/closeicon.svg";
 }

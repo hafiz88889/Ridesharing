@@ -11,4 +11,7 @@ class MyColor{
   static Color whiteColor =const Color(0xffFFFFFF);
   static Color carNaneColor =const Color(0xff5A5A5A);
   static Color blackColor =const Color(0xff121212);
+  static Color blackColori =const Color(0xff2A2A2A);
+  static Color containColor =const Color(0xffE1F5EC);
+  static Color greyColor =const Color(0xff898989);
 }

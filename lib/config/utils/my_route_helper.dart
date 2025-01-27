@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:rideshare/ui/screen/enable_location_screen/screen/enable_location_page.dart';
 import 'package:rideshare/ui/screen/home_screen/screen/home_page.dart';
+import 'package:rideshare/ui/screen/notification_screen/screen/notification_page.dart';
 import 'package:rideshare/ui/screen/onboarding_screen/screen/screen_one.dart';
 import 'package:rideshare/ui/screen/onboarding_screen/screen/screen_three.dart';
 import 'package:rideshare/ui/screen/onboarding_screen/screen/screen_two.dart';
@@ -12,6 +13,9 @@ import 'package:rideshare/ui/screen/sign_up_screen/screen/set_password_page.dart
 import 'package:rideshare/ui/screen/sign_up_screen/screen/sign_in_page.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/screen/sign_up_page.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/screen/vefication_page.dart';
+import 'package:rideshare/ui/screen/transport_screen/available_car_screen/screen/avaiable_page.dart';
+import 'package:rideshare/ui/screen/transport_screen/available_car_screen/screen/available_car_two.dart';
+import 'package:rideshare/ui/screen/transport_screen/select_transport_screen/screen/select_transport_screen.dart';
 import 'package:rideshare/ui/screen/wellcome_screen/screen/wellcome_page.dart';
 
 class RouteHelper{
@@ -29,6 +33,10 @@ class RouteHelper{
   static String phoneVerificationPage="/PhoneVerificationPage";
   static String setNewPassword="/SetNewPassword";
   static String homePage="/HomePage";
+  static String notiFicationPage="/NotificationPage";
+  static String selectTransportScreen="/SelectTransportScreen";
+  static String avaiablePage="/AvaiablePage";
+  static String avaiablePageTwo="/AvaiablePageTwo";
 
 
   static Map<String,WidgetBuilder>getRoute(){
@@ -47,6 +55,10 @@ class RouteHelper{
       RouteHelper.phoneVerificationPage:(context)=>const PhoneVerificationPage(),
       RouteHelper.setNewPassword:(context)=>const SetNewPassword(),
       RouteHelper.homePage:(context)=>const HomePage(),
+      RouteHelper.notiFicationPage:(context)=>const NotificationPage(),
+      RouteHelper.selectTransportScreen:(context)=>const SelectTransportScreen(),
+      RouteHelper.avaiablePage:(context)=>const AvaiablePage(),
+      RouteHelper.avaiablePageTwo:(context)=>const AvaiablePageTwo(),
     };
   }
 }

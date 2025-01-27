@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
 
@@ -21,7 +23,7 @@ class OutlineButtonWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image(image: AssetImage(image)),
+           SvgPicture.asset(image),
             const SizedBox(width: 10,),
             Text(title,style: regularTextStyleHintText16.copyWith(color: MyColor.carNaneColor),)
 
