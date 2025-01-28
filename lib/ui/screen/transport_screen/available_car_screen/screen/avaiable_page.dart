@@ -11,7 +11,10 @@ class AvaiablePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColor.whiteColor,
       appBar: AppBar(
+        backgroundColor: MyColor.whiteColor,
+        scrolledUnderElevation: 0,
         title: Text("Back",style: regularTextStyleHintText16.copyWith(color: MyColor.textColor),),
         leading: IconButton(onPressed: (){}, icon: Image(image: AssetImage(MyImage.backIcontop)),
       ),

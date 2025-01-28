@@ -53,27 +53,32 @@ class _SelectTransportScreenState extends State<SelectTransportScreen> {
       ),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, // 3 columns
+          crossAxisCount: 2,
           crossAxisSpacing: 5,
           mainAxisSpacing: 5,
         ),
         itemCount:productList.length,
         itemBuilder: (context, index) {
           Product product=productList[index];
-          return Container(
-            margin: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-            color: MyColor.containColor,
-              border: Border.all(color: MyColor.primaryColor)
+          return InkWell(
+            onTap: (){
+              print("${product.title}");
+            },
+            child: Container(
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+              color: MyColor.containColor,
+                border: Border.all(color: MyColor.primaryColor)
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image(image: AssetImage(product.image)),
+                  Text(product.title,style: regularTextStyleHintText16.copyWith(color: MyColor.textColor),)
+                ],
+              )
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image(image: AssetImage(product.image)),
-                Text(product.title,style: regularTextStyleHintText16.copyWith(color: MyColor.textColor),)
-              ],
-            )
           );
         },
       )

@@ -79,4 +79,7 @@ class MyImage{
   static String search="assets/images/searchimage.png";
   static String love="assets/images/loveicon.png";
   static String closeIocn="assets/icons/closeicon.svg";
+  static String thankYouImage="assets/icons/thankYou.svg";
+  static String profile="assets/images/profile.png";
+  static String cellEndIcon="assets/icons/cellend.svg";
 }

@@ -47,7 +47,7 @@ class ModelBottomSheetOne extends StatelessWidget {
               const SizedBox(height: 20,),
               Text("Recent places",style: regularTextStyleHintText16.copyWith(color: MyColor.carNaneColor),),
               const SizedBox(height: 10,),
-              PlaceLocationWidget(title1: "Office", title2: "2972 Westheimer Rd. Santa Ana, Illinois 85486 ", title3: "2.7km"),
+              const PlaceLocationWidget(title1: "Office", title2: "2972 Westheimer Rd. Santa Ana, Illinois 85486 ", title3: "2.7km"),
               const SizedBox(height: 15,),
               PlaceLocationWidget(title1: "Office", title2: "2972 Westheimer Rd. Santa Ana, Illinois 85486 ", title3: "2.7km"),
               const SizedBox(height: 15,),

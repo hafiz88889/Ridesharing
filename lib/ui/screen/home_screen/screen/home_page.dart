@@ -19,56 +19,57 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
   final List<Map<String, dynamic>> _navItems = [
-    {'icon':SvgPicture.asset(MyImage.homeIcon), 'label': 'Home'},
-    {'icon': SvgPicture.asset(MyImage.loveIcon), 'label': 'Favourite'},
-    {'icon': SvgPicture.asset(MyImage.offerIcon), 'label': 'Offer'},
-    {'icon':SvgPicture.asset(MyImage.profileIcon), 'label': 'Profile'},
+    {'icon':MyImage.homeIcon, 'label': 'Home'},
+    {'icon': MyImage.loveIcon, 'label': 'Favourite'},
+    {'icon': MyImage.offerIcon, 'label': 'Offer'},
+    {'icon':MyImage.profileIcon, 'label': 'Profile'},
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColor.whiteColor,
-      // bottomNavigationBar: Stack(
-      //   clipBehavior: Clip.none,
-      //   alignment: Alignment.center,
-      //   children: [
-      //     // Bottom Navigation Bar
-      //     BottomNavigationBar(
-      //       currentIndex: _selectedIndex,
-      //       onTap: (value) => {},
-      //       items: _navItems.map((item) {
-      //         return BottomNavigationBarItem(
-      //           icon: Icon(item['icon']),
-      //           label: item['label'],
-      //         );
-      //       }).toList(),
-      //       selectedItemColor: MyColor.primaryColor,
-      //       unselectedItemColor: MyColor.textColor,
-      //       showUnselectedLabels: true,
-      //     ),
-      //     // Center Elevated Button (Hexagonal Shape)
-      //     Positioned(
-      //       top: -30, // Adjust the position above the BottomNavigationBar
-      //       child: GestureDetector(
-      //         onTap: () {
-      //           // Center button tapped
-      //           setState(() {
-      //             _selectedIndex = 2;
-      //           });
-      //         },
-      //         child: ClipPath(
-      //           clipper: HexagonClipper(),
-      //           child: Container(
-      //             color: Colors.green,
-      //             height: 60,
-      //             width: 60,
-      //             child: SvgPicture.asset(MyImage.walletIon)
-      //           ),
-      //         ),
-      //       ),
-      //     ),
-      //   ],
-      // ),
+      bottomNavigationBar: Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.center,
+        children: [
+          // Bottom Navigation Bar
+          BottomNavigationBar(
+            currentIndex: _selectedIndex,
+            onTap: (value) => {},
+            items: _navItems.map((item) {
+              print(item['icon']);
+              return BottomNavigationBarItem(
+                icon: SvgPicture.asset(item['icon']),
+                label: item['label'],
+              );
+            }).toList(),
+            selectedItemColor: MyColor.primaryColor,
+            unselectedItemColor: MyColor.textColor,
+            showUnselectedLabels: true,
+          ),
+          // Center Elevated Button (Hexagonal Shape)
+          Positioned(
+            top: -30, // Adjust the position above the BottomNavigationBar
+            child: GestureDetector(
+              onTap: () {
+                // Center button tapped
+                setState(() {
+                  _selectedIndex = 2;
+                });
+              },
+              child: ClipPath(
+                clipper: HexagonClipper(),
+                child: Container(
+                  color: Colors.green,
+                  height: 60,
+                  width: 60,
+                  child: SvgPicture.asset(MyImage.walletIon)
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Container(
           height: MediaQuery.of(context).size.height,
@@ -251,7 +252,7 @@ class _HomePageState extends State<HomePage> {
                               child: OutlinedButton(
                                   onPressed: () {
                                     showModalBottomSheet(context: context, builder: (BuildContext context){
-                                      return FractionallySizedBox(
+                                      return const FractionallySizedBox(
                                         heightFactor: 0.75,
                                         child: SelectAddressBottomsheet(),
                                       );

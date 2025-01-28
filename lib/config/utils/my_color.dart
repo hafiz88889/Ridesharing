@@ -14,4 +14,5 @@ class MyColor{
   static Color blackColori =const Color(0xff2A2A2A);
   static Color containColor =const Color(0xffE1F5EC);
   static Color greyColor =const Color(0xff898989);
+  static Color cellColor =const Color(0xff4CAF51);
 }

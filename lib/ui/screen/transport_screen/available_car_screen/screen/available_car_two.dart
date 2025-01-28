@@ -27,7 +27,9 @@ class AvaiablePageTwo extends StatelessWidget {
               const SizedBox(height: 5,),
               Text("18 cars found",style: regularTextStyleHintText16,),
               const SizedBox(height: 30,),
-              CardWidgetTwo(image: MyImage.whiteCar, title1: "BMW Cabrio", title2: "Automatic   |   3 seats   |   Octane", title3: "800m (5mins away)"),
+              InkWell(
+                  onTap: (){Navigator.pushNamed(context,"/CarDetailsPage");},
+                  child: CardWidgetTwo(image: MyImage.whiteCar, title1: "BMW Cabrio", title2: "Automatic   |   3 seats   |   Octane", title3: "800m (5mins away)")),
               const SizedBox(height: 20,),
               CardWidgetTwo(image: MyImage.whiteCar, title1: "BMW Cabrio", title2: "Automatic   |   3 seats   |   Octane", title3: "800m (5mins away)"),
               const SizedBox(height: 20,),
