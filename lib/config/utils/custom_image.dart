@@ -82,4 +82,7 @@ class MyImage{
   static String thankYouImage="assets/icons/thankYou.svg";
   static String profile="assets/images/profile.png";
   static String cellEndIcon="assets/icons/cellend.svg";
+  static String copyIcon="assets/icons/copyIcon.svg";
+  static String arrowRight="assets/icons/Right Arrow.svg";
+  static String flag1="assets/icons/flag1.svg";
 }

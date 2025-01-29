@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:rideshare/ui/screen/about_us_screen/screen/about_us.dart';
 import 'package:rideshare/ui/screen/add_amount_screen/screen/add_money_page.dart';
 import 'package:rideshare/ui/screen/add_amount_screen/screen/amount_secound_screen.dart';
 import 'package:rideshare/ui/screen/calling_screen/calling_screen/screen/calling_page.dart';
 import 'package:rideshare/ui/screen/calling_screen/reciving_screen/screen/recived_cell.dart';
+import 'package:rideshare/ui/screen/change_language/screen/change_language.dart';
 import 'package:rideshare/ui/screen/complain_screen/screen/complain_page.dart';
 import 'package:rideshare/ui/screen/enable_location_screen/screen/enable_location_page.dart';
 import 'package:rideshare/ui/screen/history_screen/screen/history_page.dart';
@@ -16,6 +18,8 @@ import 'package:rideshare/ui/screen/onboarding_screen/screen/screen_three.dart';
 import 'package:rideshare/ui/screen/onboarding_screen/screen/screen_two.dart';
 import 'package:rideshare/ui/screen/payment_screen/screen/botto_sheet_page.dart';
 import 'package:rideshare/ui/screen/payment_screen/screen/payment_page.dart';
+import 'package:rideshare/ui/screen/refferal_screen/screen/refferel_page.dart';
+import 'package:rideshare/ui/screen/setting_screen/screen/setting_page.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/screen/phone_verification_page.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/screen/profile_page.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/screen/send_verification_page.dart';
@@ -69,6 +73,10 @@ class RouteHelper{
   static String offerPage="/OfferPage";
   static String historyPage="/HistoryPage";
   static String complainPage="/ComplainPage";
+  static String refferelPage="/RefferelPage";
+  static String aboutUs="/AboutUs";
+  static String settingPage="/SettingPage";
+  static String changeLanguage="/ChangeLanguage";
 
 
   static Map<String,WidgetBuilder>getRoute(){
@@ -107,6 +115,10 @@ class RouteHelper{
       RouteHelper.offerPage:(context)=>const OfferPage(),
       RouteHelper.historyPage:(context)=> const HistoryPage(),
       RouteHelper.complainPage:(context)=> const ComplainPage(),
+      RouteHelper.refferelPage:(context)=> const RefferelPage(),
+      RouteHelper.aboutUs:(context)=> const AboutUs(),
+      RouteHelper.settingPage:(context)=> const SettingPage(),
+      RouteHelper.changeLanguage:(context)=> const ChangeLanguage(),
     };
   }
 }

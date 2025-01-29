@@ -50,15 +50,27 @@ class DrawerOption extends StatelessWidget {
           const SizedBox(height: 16,),
           const Divider(),
           const SizedBox(height: 16,),
-          DrawerIteWidget(image: MyImage.refferalIcon, title: "Referral"),
+          InkWell(
+              onTap: (){
+                Navigator.pushNamed(context, "/RefferelPage");
+              },
+              child: DrawerIteWidget(image: MyImage.refferalIcon, title: "Referral")),
           const SizedBox(height: 16,),
           const Divider(),
           const SizedBox(height: 16,),
-          DrawerIteWidget(image: MyImage.aboutUsIcon, title: "About Us"),
+          InkWell(
+              onTap: (){
+                Navigator.pushNamed(context, "/AboutUs");
+              },
+              child: DrawerIteWidget(image: MyImage.aboutUsIcon, title: "About Us")),
           const SizedBox(height: 16,),
           const Divider(),
           const SizedBox(height: 16,),
-          DrawerIteWidget(image: MyImage.settingIcon, title: "Settings"),
+          InkWell(
+              onTap: (){
+                Navigator.pushNamed(context, "/SettingPage");
+              },
+              child: DrawerIteWidget(image: MyImage.settingIcon, title: "Settings")),
           const SizedBox(height: 16,),
           const Divider(),
           const SizedBox(height: 16,),

@@ -37,7 +37,7 @@ class ComplainPage extends StatelessWidget {
           ],
         ),
       ),
-      body: Padding(padding: EdgeInsets.all(20),
+      body: Padding(padding: const EdgeInsets.all(20),
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -65,7 +65,40 @@ class ComplainPage extends StatelessWidget {
               height: 54,
               width: 340,
               child: ElevatedButton(onPressed: (){
-               // Navigator.pushNamed(context, "/SendVerificationPage");
+             showDialog(context: context, builder: (context)=>AlertDialog(
+               backgroundColor: MyColor.whiteColor,
+               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+               title:Column(
+                 children: [
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.end,
+                     children: [
+                       InkWell(
+                           onTap: (){Navigator.pop(context);},
+                           child: SvgPicture.asset(MyImage.closeIocn))
+                     ],
+                   ),
+                   Image(image: AssetImage(MyImage.paymentComplete)),
+                   const SizedBox(height: 23,),
+                   Text("Send successful",style: regularTextStyleHintText16.copyWith(color: MyColor.carNaneColor,fontSize: 22),),
+                   const SizedBox(height: 12,),
+                   Text("Your complain has been send successful",style: regularTextStyle14.copyWith(fontSize: 12),),
+                   const SizedBox(height: 30,),
+                   SizedBox(
+                     height: 54,
+                     width: 310,
+                     child: ElevatedButton(onPressed: (){
+                       //Navigator.pushNamed(context, "/RefferelPage");
+                     },
+                         style: ButtonStyle(
+                             backgroundColor: WidgetStateProperty.all(MyColor.buttonColor),
+                             shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)))
+                         ),
+                         child: Text("Back Home",style: regularTextStyleHintText16.copyWith(color: MyColor.whiteColor),)),
+                   ),
+                 ],
+               ),
+             ));
               },
                   style: ButtonStyle(
                       backgroundColor: WidgetStateProperty.all(MyColor.buttonColor),
