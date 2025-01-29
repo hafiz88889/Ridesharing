@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
+import 'package:rideshare/ui/screen/home_screen/screen/drawer_option.dart';
 import 'package:rideshare/ui/screen/home_screen/screen/model_bottom_sheet_one.dart';
 import 'package:rideshare/ui/screen/home_screen/screen/select_address_bottomsheet.dart';
 import 'package:rideshare/ui/screen/home_screen/widget/navigation_design.dart';
@@ -24,9 +25,16 @@ class _HomePageState extends State<HomePage> {
     {'icon': MyImage.offerIcon, 'label': 'Offer'},
     {'icon':MyImage.profileIcon, 'label': 'Profile'},
   ];
+  var scaffoldKey=GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: MyColor.whiteColor,
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100))),
+          child: const DrawerOption(),
+      ),
+      key: scaffoldKey,
       backgroundColor: MyColor.whiteColor,
       bottomNavigationBar: Stack(
         clipBehavior: Clip.none,
@@ -35,7 +43,9 @@ class _HomePageState extends State<HomePage> {
           // Bottom Navigation Bar
           BottomNavigationBar(
             currentIndex: _selectedIndex,
-            onTap: (value) => {},
+            onTap: (value) => {
+
+            },
             items: _navItems.map((item) {
               print(item['icon']);
               return BottomNavigationBarItem(
@@ -59,11 +69,15 @@ class _HomePageState extends State<HomePage> {
               },
               child: ClipPath(
                 clipper: HexagonClipper(),
-                child: Container(
-                  color: Colors.green,
-                  height: 60,
-                  width: 60,
-                  child: SvgPicture.asset(MyImage.walletIon)
+                child: InkWell(
+                  onTap: () {Navigator.pushNamed(context, "/OfferPage");},
+                  child: Container(
+                    padding: EdgeInsets.all(15),
+                    color: Colors.green,
+                    height: 60,
+                    width: 60,
+                    child: SvgPicture.asset(MyImage.walletIon)
+                  ),
                 ),
               ),
             ),
@@ -87,18 +101,23 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      height: 34,
-                      width: 34,
-                      padding: const  EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: MyColor.buttonColor.withAlpha(150),
-                      ),
-                      child: Image(
-                        image: AssetImage(MyImage.menu),
-                        height: 30,
-                        width: 30,
+                    InkWell(
+                      onTap: (){
+                        scaffoldKey.currentState?.openDrawer();
+                      },
+                      child: Container(
+                        height: 34,
+                        width: 34,
+                        padding: const  EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: MyColor.buttonColor.withAlpha(150),
+                        ),
+                        child: Image(
+                          image: AssetImage(MyImage.menu),
+                          height: 30,
+                          width: 30,
+                        ),
                       ),
                     ),
                     InkWell(

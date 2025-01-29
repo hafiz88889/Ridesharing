@@ -85,16 +85,19 @@ class _CarDetailsPageState extends State<CarDetailsPage> {
               SizedBox(
                 height: 180,
                 child: CarouselView(
+                  shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
                     itemExtent: MediaQuery.of(context).size.width-32,
                     itemSnapping: true,
-                    elevation: 4,
+                    elevation: 0,
                     padding:  const EdgeInsets.all(10),
-                    children: List.generate(10, (int index){
-                      return Container(
-                        color: MyColor.whiteColor,
-                        child: Image(image: AssetImage(MyImage.redCarSmall),fit: BoxFit.cover,),
-                      );
-                    })),
+                    children: [
+                      Image(image: AssetImage(MyImage.redCarSmall),fit: BoxFit.cover,),
+                      Image(image: AssetImage(MyImage.whiteCar),fit: BoxFit.cover,),
+                      Image(image: AssetImage(MyImage.sendMoneyIcon),fit: BoxFit.cover,),
+                      Image(image: AssetImage(MyImage.redCarSmall),fit: BoxFit.cover,),
+                      Image(image: AssetImage(MyImage.redCarSmall),fit: BoxFit.cover,),
+                    ],
+                ),
               ),
               Text("Specifications",style: regularTextStyleHintText16.copyWith(fontSize: 18,color: MyColor.carNaneColor),),
               const SizedBox(height: 16,),

@@ -80,7 +80,6 @@ class PaymentPage extends StatelessWidget {
                       height: 54,
                       width: 310,
                       child: ElevatedButton(onPressed: (){
-
                         showModalBottomSheet(
                           isScrollControlled: true,
                             shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(50),topLeft: Radius.circular(50))),

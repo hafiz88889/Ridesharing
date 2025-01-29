@@ -9,22 +9,22 @@ class BalanceWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      padding: const EdgeInsets.all(14),
-      height: 145,
-      width: 166,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: MyColor.containColor,
-          border: Border.all(color: MyColor.primaryColor)
-      ),
-      child: Column(
-        children: [
-          Text(title1,style: regularTextStyle24.copyWith(fontSize: 28),),
-          const SizedBox(height: 21,),
-          Text(title2,style: regularTextStyleHintText16.copyWith(color: MyColor.carNaneColor,fontSize: 14),)
-        ],
+    return Expanded(
+      child: Container(
+        alignment: Alignment.center,
+        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: MyColor.containColor,
+            border: Border.all(color: MyColor.primaryColor)
+        ),
+        child: Column(
+          children: [
+            Text(title1,style: regularTextStyle24.copyWith(fontSize: 28),),
+            const SizedBox(height: 21,),
+            Text(title2,style: regularTextStyleHintText16.copyWith(color: MyColor.carNaneColor,fontSize: 14),)
+          ],
+        ),
       ),
     );
   }

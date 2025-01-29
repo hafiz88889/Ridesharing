@@ -15,4 +15,6 @@ class MyColor{
   static Color containColor =const Color(0xffE1F5EC);
   static Color greyColor =const Color(0xff898989);
   static Color cellColor =const Color(0xff4CAF51);
+  static Color addMoneyColor =const Color(0xff304FFE);
+  static Color offerColor =const Color(0xffF57F17);
 }

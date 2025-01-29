@@ -1,11 +1,16 @@
 import 'package:flutter/cupertino.dart';
+import 'package:rideshare/ui/screen/add_amount_screen/screen/add_money_page.dart';
+import 'package:rideshare/ui/screen/add_amount_screen/screen/amount_secound_screen.dart';
 import 'package:rideshare/ui/screen/calling_screen/calling_screen/screen/calling_page.dart';
 import 'package:rideshare/ui/screen/calling_screen/reciving_screen/screen/recived_cell.dart';
+import 'package:rideshare/ui/screen/complain_screen/screen/complain_page.dart';
 import 'package:rideshare/ui/screen/enable_location_screen/screen/enable_location_page.dart';
+import 'package:rideshare/ui/screen/history_screen/screen/history_page.dart';
 import 'package:rideshare/ui/screen/home_screen/screen/home_page.dart';
 import 'package:rideshare/ui/screen/location_screen_confirm/screen/location_screen_confirm.dart';
 import 'package:rideshare/ui/screen/message_screen/screen/chatting_page.dart';
 import 'package:rideshare/ui/screen/notification_screen/screen/notification_page.dart';
+import 'package:rideshare/ui/screen/offer_screen/screen/offer_page.dart';
 import 'package:rideshare/ui/screen/onboarding_screen/screen/screen_one.dart';
 import 'package:rideshare/ui/screen/onboarding_screen/screen/screen_three.dart';
 import 'package:rideshare/ui/screen/onboarding_screen/screen/screen_two.dart';
@@ -59,6 +64,11 @@ class RouteHelper{
   static String paymentPage="/PaymentPage";
   static String bottoSheetPage="/BottoSheetPage";
   static String walletPage="/WalletPage";
+  static String addMoneyPage="/AddMoneyPage";
+  static String amountSecoundScreen="/AmountSecoundScreen";
+  static String offerPage="/OfferPage";
+  static String historyPage="/HistoryPage";
+  static String complainPage="/ComplainPage";
 
 
   static Map<String,WidgetBuilder>getRoute(){
@@ -92,6 +102,11 @@ class RouteHelper{
       RouteHelper.paymentPage:(context)=>const PaymentPage(),
       RouteHelper.bottoSheetPage:(context)=>const BottoSheetPage(),
       RouteHelper.walletPage:(context)=>const WalletPage(),
+      RouteHelper.addMoneyPage:(context)=>const AddMoneyPage(),
+      RouteHelper.amountSecoundScreen:(context)=>const AmountSecoundScreen(),
+      RouteHelper.offerPage:(context)=>const OfferPage(),
+      RouteHelper.historyPage:(context)=> const HistoryPage(),
+      RouteHelper.complainPage:(context)=> const ComplainPage(),
     };
   }
 }

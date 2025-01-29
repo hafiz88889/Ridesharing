@@ -8,7 +8,8 @@ class TransectionWidget extends StatelessWidget {
   final String title1;
   final String title2;
   final String title3;
-  const TransectionWidget({super.key,required this.image,required this.title1,required this.title2,required this.title3});
+  final Color color;
+  const TransectionWidget({super.key,required this.image,required this.title1,required this.title2,required this.title3,required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class TransectionWidget extends StatelessWidget {
             height: 40,
             width: 40,
             child: CircleAvatar(
-              backgroundColor: MyColor.redColor.withAlpha(30),
+              backgroundColor: color.withAlpha(30),
               child: SvgPicture.asset(image),
             ),
           ),

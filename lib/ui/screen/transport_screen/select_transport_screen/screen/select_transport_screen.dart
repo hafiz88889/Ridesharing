@@ -5,7 +5,6 @@ import 'package:rideshare/config/utils/text_style.dart';
 
 class SelectTransportScreen extends StatefulWidget {
   const SelectTransportScreen({super.key});
-
   @override
   State<SelectTransportScreen> createState() => _SelectTransportScreenState();
 }

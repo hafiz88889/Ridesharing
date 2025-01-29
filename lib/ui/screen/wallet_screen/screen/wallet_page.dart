@@ -58,24 +58,28 @@ class WalletPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
-                    alignment: Alignment.center,
-                    height: 54,
-                    width: 171,
-                    padding: EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: MyColor.primaryColor)
+                  InkWell(
+                    onTap: (){Navigator.pushNamed(context, "/AddMoneyPage");},
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 54,
+                      width: 171,
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: MyColor.primaryColor)
+                      ),
+                      child: Text("Add Money",style: regularTextStyleHintText16.copyWith(color: MyColor.primaryColor),),
                     ),
-                    child: Text("Add Money",style: regularTextStyleHintText16.copyWith(color: MyColor.primaryColor),),
                   )
                 ],
               ),
               const SizedBox(height: 30,),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   BalanceWidget(title1: "\$500", title2: "Available Balance"),
+                  const SizedBox(width: 20,),
                   BalanceWidget(title1: "\$200", title2: "Total Expend"),
                 ],
               ),
@@ -88,15 +92,13 @@ class WalletPage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 15,),
-              TransectionWidget(image: MyImage.sendMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$-570.00"),
-              TransectionWidget(image: MyImage.sendMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$-570.00"),
-              TransectionWidget(image: MyImage.sendMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$-570.00"),
-              TransectionWidget(image: MyImage.sendMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$-570.00"),
-              TransectionWidget(image: MyImage.sendMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$-570.00"),
-              TransectionWidget(image: MyImage.sendMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$-570.00"),
-              TransectionWidget(image: MyImage.sendMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$-570.00"),
-              TransectionWidget(image: MyImage.sendMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$-570.00"),
-              TransectionWidget(image: MyImage.sendMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$-570.00"),
+              TransectionWidget(image: MyImage.sendMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$-570.00",color: MyColor.redColor,),
+              TransectionWidget(image: MyImage.recivedMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$+570.00",color: MyColor.primaryColor,),
+              TransectionWidget(image: MyImage.sendMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$-570.00",color: MyColor.redColor,),
+              TransectionWidget(image: MyImage.sendMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$-570.00",color: MyColor.redColor,),
+              TransectionWidget(image: MyImage.recivedMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$+570.00",color: MyColor.primaryColor,),
+              TransectionWidget(image: MyImage.recivedMoneyIcon, title1: "Walton", title2: "Today at 09:20 am", title3: "\$+570.00",color: MyColor.primaryColor,),
+
            ],
           ),
         ),
