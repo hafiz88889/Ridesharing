@@ -44,13 +44,27 @@ class SettingPage extends StatelessWidget {
           children: [
             InkWell(
                 onTap: (){
-                  Navigator.pushNamed(context, "/ChangeLanguage");
+                  Navigator.pushNamed(context, "/ChangePasswordScreen");
                 },
                 child: CardWidgetSetting(image: MyImage.arrowRight, title1: "Change Password")),
-            CardWidgetSetting(image: MyImage.arrowRight, title1: "Change Language"),
-            CardWidgetSetting(image: MyImage.arrowRight, title1: "Privacy Policy"),
-            CardWidgetSetting(image: MyImage.arrowRight, title1: "Contact Us"),
-            CardWidgetSetting(image: MyImage.arrowRight, title1: "Delete Account"),
+            InkWell(
+                onTap: (){Navigator.pushNamed(context, "/ChangeLanguage");},
+                child: CardWidgetSetting(image: MyImage.arrowRight, title1: "Change Language")),
+            InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context, "/PrivacyPolicyPage");
+                },
+                child: CardWidgetSetting(image: MyImage.arrowRight, title1: "Privacy Policy")),
+            InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context, "/ContactUsPage");
+                },
+                child: CardWidgetSetting(image: MyImage.arrowRight, title1: "Contact Us")),
+            InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context, "/DeletePage");
+                },
+                child: CardWidgetSetting(image: MyImage.arrowRight, title1: "Delete Account")),
           ],
         ),
       ),

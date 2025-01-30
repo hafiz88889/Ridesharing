@@ -5,8 +5,12 @@ import 'package:rideshare/ui/screen/add_amount_screen/screen/amount_secound_scre
 import 'package:rideshare/ui/screen/calling_screen/calling_screen/screen/calling_page.dart';
 import 'package:rideshare/ui/screen/calling_screen/reciving_screen/screen/recived_cell.dart';
 import 'package:rideshare/ui/screen/change_language/screen/change_language.dart';
+import 'package:rideshare/ui/screen/change_password/screen/change_password_screen.dart';
 import 'package:rideshare/ui/screen/complain_screen/screen/complain_page.dart';
+import 'package:rideshare/ui/screen/contact_us_screen/screen/contact_us_page.dart';
+import 'package:rideshare/ui/screen/delet_account_screen/screen/delect_page.dart';
 import 'package:rideshare/ui/screen/enable_location_screen/screen/enable_location_page.dart';
+import 'package:rideshare/ui/screen/help_and_support_screen/screen/help_and_support.dart';
 import 'package:rideshare/ui/screen/history_screen/screen/history_page.dart';
 import 'package:rideshare/ui/screen/home_screen/screen/home_page.dart';
 import 'package:rideshare/ui/screen/location_screen_confirm/screen/location_screen_confirm.dart';
@@ -18,6 +22,7 @@ import 'package:rideshare/ui/screen/onboarding_screen/screen/screen_three.dart';
 import 'package:rideshare/ui/screen/onboarding_screen/screen/screen_two.dart';
 import 'package:rideshare/ui/screen/payment_screen/screen/botto_sheet_page.dart';
 import 'package:rideshare/ui/screen/payment_screen/screen/payment_page.dart';
+import 'package:rideshare/ui/screen/privacy_policy/screen/privacy_policy_page.dart';
 import 'package:rideshare/ui/screen/refferal_screen/screen/refferel_page.dart';
 import 'package:rideshare/ui/screen/setting_screen/screen/setting_page.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/screen/phone_verification_page.dart';
@@ -77,6 +82,11 @@ class RouteHelper{
   static String aboutUs="/AboutUs";
   static String settingPage="/SettingPage";
   static String changeLanguage="/ChangeLanguage";
+  static String changePasswordScreen="/ChangePasswordScreen";
+  static String contactUsPage="/ContactUsPage";
+  static String deletePage="/DeletePage";
+  static String helpAndSupportPage="/HelpAndSupportPage";
+  static String privacyPolicyPage="/PrivacyPolicyPage";
 
 
   static Map<String,WidgetBuilder>getRoute(){
@@ -119,6 +129,11 @@ class RouteHelper{
       RouteHelper.aboutUs:(context)=> const AboutUs(),
       RouteHelper.settingPage:(context)=> const SettingPage(),
       RouteHelper.changeLanguage:(context)=> const ChangeLanguage(),
+      RouteHelper.changePasswordScreen:(context)=> const ChangePasswordScreen(),
+      RouteHelper.contactUsPage:(context)=> const ContactUsPage(),
+      RouteHelper.deletePage:(context)=> const DeletePage(),
+      RouteHelper.helpAndSupportPage:(context)=> const HelpAndSupportPage(),
+      RouteHelper.privacyPolicyPage:(context)=> const PrivacyPolicyPage(),
     };
   }
 }

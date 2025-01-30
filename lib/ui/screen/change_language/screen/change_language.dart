@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
 import 'package:rideshare/ui/screen/change_language/widget/change_language_card_widget.dart';
 
-class ChangeLanguage extends StatelessWidget {
+class ChangeLanguage extends StatefulWidget {
   const ChangeLanguage({super.key});
 
+  @override
+  State<ChangeLanguage> createState() => _ChangeLanguageState();
+}
+
+class _ChangeLanguageState extends State<ChangeLanguage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: MyColor.whiteColor,
         scrolledUnderElevation: 0,
-        leading:
-        IconButton(
-            padding: EdgeInsets.zero,
+        leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+            icon: Image(image: AssetImage(MyImage.backIcontop))),
         title: Row(
           children: [
             Text(
@@ -29,7 +33,7 @@ class ChangeLanguage extends StatelessWidget {
             const Spacer(),
             Text(
               "Change Language",
-              style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 18),
+              style: regularTextStyleHintText16.copyWith(color: MyColor.blackColor),
             ),
             const Spacer(),
           ],
@@ -41,7 +45,23 @@ class ChangeLanguage extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 10,),
-            ChangeLanguageCardWidget(image: MyImage.flag1, title: "English")
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.bdFlag, title1: "Bangla", title2: "Bengali"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
+            ChangeLanguageCardWidget(image: MyImage.flag, title1: "English", title2: "English"),
           ],
         ),
       ),

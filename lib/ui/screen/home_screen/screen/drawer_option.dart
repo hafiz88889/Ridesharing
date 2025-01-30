@@ -74,11 +74,19 @@ class DrawerOption extends StatelessWidget {
           const SizedBox(height: 16,),
           const Divider(),
           const SizedBox(height: 16,),
-          DrawerIteWidget(image: MyImage.helpAndSupportIcon, title: "Help and Support"),
+          InkWell(
+              onTap: (){
+                Navigator.pushNamed(context, "/HelpAndSupportPage");
+              },
+              child: DrawerIteWidget(image: MyImage.helpAndSupportIcon, title: "Help and Support")),
           const SizedBox(height: 16,),
           const Divider(),
           const SizedBox(height: 16,),
-          DrawerIteWidget(image: MyImage.logOutIcon, title: "Logout"),
+          InkWell(
+              onTap: (){
+                Navigator.pushNamed(context, "/SignInPage");
+              },
+              child: DrawerIteWidget(image: MyImage.logOutIcon, title: "Logout")),
           const SizedBox(height: 16,),
 
         ],
