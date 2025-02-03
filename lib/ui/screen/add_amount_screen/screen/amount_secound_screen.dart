@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
+import 'package:rideshare/ui/global_widget/text_field_widget.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/text_field_two.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/text_field_widget.dart';
 import 'package:rideshare/ui/screen/transport_screen/request_rent_screen/widget/select_pay_method_widget.dart';
@@ -35,9 +36,12 @@ class AmountSecoundScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextFieldTwo(),
+              GlobalTextFieldWidget(hintText: "Select Payment Method",suffix: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: SvgPicture.asset(MyImage.downArrowIcon),
+              ),),
               const SizedBox(height: 16,),
-              const TextFieldWidget(title: "Account Number"),
+             const GlobalTextFieldWidget(hintText: "Account Number"),
               const SizedBox(height: 24,),
               Padding(
                 padding: const EdgeInsets.all(15.0),

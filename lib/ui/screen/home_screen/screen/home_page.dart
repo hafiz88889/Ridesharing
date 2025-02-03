@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
           ),
           // Center Elevated Button (Hexagonal Shape)
           Positioned(
-            top: -30, // Adjust the position above the BottomNavigationBar
+            top: -40, // Adjust the position above the BottomNavigationBar
             child: GestureDetector(
               onTap: () {
                 // Center button tapped
@@ -70,9 +70,9 @@ class _HomePageState extends State<HomePage> {
               child: ClipPath(
                 clipper: HexagonClipper(),
                 child: InkWell(
-                  onTap: () {Navigator.pushNamed(context, "/OfferPage");},
+                  onTap: () {Navigator.pushNamed(context, "/WalletPage");},
                   child: Container(
-                    padding: EdgeInsets.all(15),
+                    padding: const EdgeInsets.all(15),
                     color: Colors.green,
                     height: 60,
                     width: 60,
@@ -143,41 +143,55 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 140,
                 ),
-                Container(
-                  padding: const EdgeInsets.all(7),
-                  height: 224,
-                  width: 224,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: MyColor.primaryColor.withAlpha(15)),
-                  child: SizedBox(
-                    height: 150,
-                    width: 150,
-                    child: Container(
-                      padding: const EdgeInsets.all(7),
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: MyColor.primaryColor.withAlpha(25)),
-                      child: Container(
-                        padding: const EdgeInsets.all(7),
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: MyColor.primaryColor.withAlpha(35)),
-                        child: Container(
-                            padding: const EdgeInsets.all(7),
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: MyColor.primaryColor.withAlpha(50)),
-                            child: Image(
-                              image: AssetImage(MyImage.location),
-                              height: 15,
-                              width: 15,
-                              color: MyColor.textColor,
-                            )),
-                      ),
-                    ),
-                  ),
-                ),
+               Stack(
+                 children: [
+                   Container(
+                     padding: const EdgeInsets.all(7),
+                     height: 224,
+                     width: 224,
+                     decoration: BoxDecoration(
+                         shape: BoxShape.circle,
+                         color: MyColor.primaryColor.withAlpha(15)),
+                   ),
+                   Positioned(
+                     left: 40,
+                     top: 40,
+                     child: Container(
+                       padding: const EdgeInsets.all(7),
+                       height: 154,
+                       width: 154,
+                       decoration: BoxDecoration(
+                           shape: BoxShape.circle,
+                           color: MyColor.primaryColor.withAlpha(40)),
+                     ),
+                   ),
+                   Positioned(
+                     left: 80,
+                     top: 80,
+                     child: Container(
+                       padding: const EdgeInsets.all(7),
+                       height: 72,
+                       width: 72,
+                       decoration: BoxDecoration(
+                           shape: BoxShape.circle,
+                           color: MyColor.primaryColor.withAlpha(100)),
+                     ),
+                   ),
+                   Positioned(
+                     left: 103,
+                     top: 103,
+                     child: Container(
+                       padding: const EdgeInsets.all(7),
+                       height: 28,
+                       width: 28,
+                       decoration: BoxDecoration(
+                           shape: BoxShape.circle,
+                           color: MyColor.primaryColor.withAlpha(200)),
+                       child: Image(image: AssetImage(MyImage.location)),
+                     ),
+                   ),
+                 ],
+               ),
                 const SizedBox(
                   height: 70,
                 ),

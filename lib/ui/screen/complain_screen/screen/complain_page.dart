@@ -4,6 +4,7 @@ import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
 import 'package:rideshare/ui/global_widget/text_field_widget.dart';
+import 'package:rideshare/ui/screen/complain_screen/widget/drop_down_complain_widget.dart';
 
 class ComplainPage extends StatelessWidget {
   const ComplainPage({super.key});
@@ -34,10 +35,7 @@ class ComplainPage extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 10,),
-            GlobalTextFieldWidget(hintText: "Vehicle not clean",suffix: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: SvgPicture.asset(MyImage.downArrowIcon),
-            ),),
+            const DropDownComplainWidget(),
             const SizedBox(height: 16,),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),

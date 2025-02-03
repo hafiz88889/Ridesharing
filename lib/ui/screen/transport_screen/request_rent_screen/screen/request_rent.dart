@@ -122,7 +122,11 @@ class RequestRent extends StatelessWidget {
             const SizedBox(height: 30,),
             Text("Select payment method",style: regularTextStyleHintText16.copyWith(fontSize: 18,color: MyColor.carNaneColor),),
             const SizedBox(height: 24,),
-            SelectPayMethodWidget(image: MyImage.visa, title1: '**** **** **** 8970', title2: "Expires: 12/26"),
+            InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context, "/WalletPage");
+                },
+                child: SelectPayMethodWidget(image: MyImage.visa, title1: '**** **** **** 8970', title2: "Expires: 12/26")),
             SelectPayMethodWidget(image: MyImage.masterCard, title1: '**** **** **** 8970', title2: "Expires: 12/26"),
             SelectPayMethodWidget(image: MyImage.payPal, title1: 'mailaddress@mail.com', title2: "Expires: 12/26"),
             SelectPayMethodWidget(image: MyImage.cash, title1: 'Cash', title2: "Expires: 12/26"),

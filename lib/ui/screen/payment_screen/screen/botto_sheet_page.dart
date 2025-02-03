@@ -62,6 +62,7 @@ class BottoSheetPage extends StatelessWidget {
               border: Border.all(color: MyColor.greyColor)
             ),
             child: TextField(
+              maxLines: 5,
               decoration: InputDecoration(
                 hintText: "Write your text",hintStyle: regularTextStyleHintText16,
                 border: InputBorder.none
@@ -90,6 +91,7 @@ class BottoSheetPage extends StatelessWidget {
             child: Expanded(
               child: ElevatedButton(onPressed: (){
                showDialog(
+
                    context: context, builder: (context)=>AlertDialog(
                  title: Column(
                    children: [

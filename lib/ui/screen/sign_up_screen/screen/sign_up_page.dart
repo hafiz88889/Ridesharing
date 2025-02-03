@@ -53,10 +53,21 @@ class _SignUpPageState extends State<SignUpPage> {
                 height: 20,
               ),
               const GlobalTextFieldWidget(hintText: "Email"),
-              const SizedBox(
-                height: 20,
+              const SizedBox(height: 20,),
+              GlobalTextFieldWidget(hintText:"Your mobile number",prefix:
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  children: [
+                  Image(image: AssetImage(MyImage.bdFlag)),
+                    const SizedBox(width: 8,),
+                    SvgPicture.asset(MyImage.downArrowIcon),
+                  ],
+                ),
               ),
-              DropdownExample(),
+              ),
+              const SizedBox(height: 20,),
+              const DropdownWidget(),
               const SizedBox(
                 height: 20,
               ),

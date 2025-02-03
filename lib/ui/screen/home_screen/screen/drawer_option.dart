@@ -84,6 +84,14 @@ class DrawerOption extends StatelessWidget {
           const SizedBox(height: 16,),
           InkWell(
               onTap: (){
+                Navigator.pushNamed(context, "/OfferPage");
+              },
+              child: DrawerIteWidget(image: MyImage.offerIcon, title: "Offer")),
+          const SizedBox(height: 16,),
+          const Divider(),
+          const SizedBox(height: 16,),
+          InkWell(
+              onTap: (){
                 Navigator.pushNamed(context, "/SignInPage");
               },
               child: DrawerIteWidget(image: MyImage.logOutIcon, title: "Logout")),

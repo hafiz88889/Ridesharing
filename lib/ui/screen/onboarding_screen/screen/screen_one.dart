@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rideshare/config/utils/all_text.dart';
 import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
@@ -26,7 +27,7 @@ class OnBoardingPage extends StatelessWidget {
             const SizedBox(height: 40,),
             Text("Anywhere you are",style: regularTextStyle24,),
             const SizedBox(height: 10,),
-            Text("Sell houses easily with the help of \n Listenoryzx and to make this line big \n              I am weitting more",style: regularTextStyleHintText16.copyWith(color: MyColor.normalTextColor,fontSize: 14),),
+            Text(MyText.onBoardingOne,textAlign: TextAlign.center,style: regularTextStyleHintText16.copyWith(color: MyColor.normalTextColor,fontSize: 14),),
             const  SizedBox(height: 168,),
             Stack(
               children: [

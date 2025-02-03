@@ -3,16 +3,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 
-class DropdownExample extends StatefulWidget {
+class DropdownWidget extends StatefulWidget {
+  const DropdownWidget({super.key,
+  });
+
   @override
-  _DropdownExampleState createState() => _DropdownExampleState();
+  State<DropdownWidget> createState() => _DropdownWidgetState();
 }
-
-class _DropdownExampleState extends State<DropdownExample> {
-   String selectedValue="Gender";
-
-  List<String> options = ["Gender","male", "female",];
-
+String selectedValue="Gender";
+class _DropdownWidgetState extends State<DropdownWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,12 +32,18 @@ class _DropdownExampleState extends State<DropdownExample> {
               selectedValue = newValue!;
             });
           },
-          items: options.map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value),
-            );
-          }).toList(),
+          items:const [
+            DropdownMenuItem(
+                value: "Gender",
+                child: Text("Gender")),
+            DropdownMenuItem(
+              value: "Male",
+                child: Text("Male")),
+            DropdownMenuItem(
+              value: "female",
+                child: Text("female")),
+
+          ]
         ),
       ),
     );

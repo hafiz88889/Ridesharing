@@ -12,6 +12,7 @@ class WalletPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: MyColor.whiteColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 40),
         child: SingleChildScrollView(

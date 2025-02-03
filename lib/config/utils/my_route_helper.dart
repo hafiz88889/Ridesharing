@@ -137,7 +137,7 @@ class RouteHelper{
       RouteHelper.helpAndSupportPage:(context)=> const HelpAndSupportPage(),
       RouteHelper.privacyPolicyPage:(context)=> const PrivacyPolicyPage(),
       RouteHelper.chattingPage:(context)=>  ChatScreen(),
-      RouteHelper.dropdownExample:(context)=>  DropdownExample(),
+     // RouteHelper.dropdownExample:(context)=>  DropdownExample(),
     };
   }
 }

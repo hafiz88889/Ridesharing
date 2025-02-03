@@ -4,6 +4,7 @@ import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
 import 'package:rideshare/ui/global_widget/text_field_widget.dart';
+import 'package:rideshare/ui/screen/sign_up_screen/widget/dropdown_profile_widget.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/text_field_two.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/text_field_widget.dart';
 
@@ -104,83 +105,26 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(height: 30,),
             const GlobalTextFieldWidget(hintText: "Full Name"),
             const SizedBox(height: 20,),
-            const TextFieldTwo(),
+            GlobalTextFieldWidget(hintText:"Your mobile number",prefix:
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                children: [
+                  Image(image: AssetImage(MyImage.bdFlag)),
+                  const SizedBox(width: 8,),
+                  SvgPicture.asset(MyImage.downArrowIcon),
+                ],
+              ),
+            ),
+            ),
             const SizedBox(height: 20,),
             const GlobalTextFieldWidget(hintText: "Email"),
             const SizedBox(height: 20,),
             const GlobalTextFieldWidget(hintText: "Street"),
             const SizedBox(height: 20,),
-            GlobalTextFieldWidget(hintText: "City",
-                suffix: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
-                  child: DropdownButton<String>(
-                    hint: const Text("Select city"),
-                    dropdownColor: MyColor.whiteColor,
-                    value: dropdownValue,
-                    icon: SvgPicture.asset(MyImage.downArrowIcon),
-                    onChanged: (String? newValue){
-                      setState(() {
-                        dropdownValue=newValue!;
-                      });
-                    },
-                    items: const [
-                      DropdownMenuItem(
-                        value: "one",
-                        child: Text("Dhaka"),
-                      ),
-                      DropdownMenuItem(
-                        value: "Two",
-                        child: Text("Chittagong"),
-                      ),
-                      DropdownMenuItem(
-                        value: "three",
-                        child: Text("coxbazar"),
-                      ),
-                      DropdownMenuItem(
-                        value: "four",
-                        child: Text("Chittagong"),
-                      ),
-                    ],
-
-                  ),
-                ),
-            ),
+            const DropDownProfileWidget(),
             const SizedBox(height: 20,),
-            GlobalTextFieldWidget(hintText: "City",
-              suffix: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
-                child: DropdownButton<String>(
-                  hint: Text("Select city"),
-                  dropdownColor: MyColor.whiteColor,
-                  value: dropdownValue,
-                  icon: SvgPicture.asset(MyImage.downArrowIcon),
-                  onChanged: (String? newValue){
-                    setState(() {
-                      dropdownValue=newValue!;
-                    });
-                  },
-                  items: const [
-                    DropdownMenuItem(
-                      value: "one",
-                      child: Text("Dhaka"),
-                    ),
-                    DropdownMenuItem(
-                      value: "Two",
-                      child: Text("Chittagong"),
-                    ),
-                    DropdownMenuItem(
-                      value: "three",
-                      child: Text("coxbazar"),
-                    ),
-                    DropdownMenuItem(
-                      value: "four",
-                      child: Text("Chittagong"),
-                    ),
-                  ],
-
-                ),
-              ),
-            ),
+            const DropDownProfileWidget(),
             const SizedBox(height: 40,),
 
 

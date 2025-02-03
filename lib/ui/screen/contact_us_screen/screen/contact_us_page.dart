@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
+import 'package:rideshare/ui/global_widget/text_field_widget.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/text_field_two.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/text_field_widget.dart';
 class ContactUsPage extends StatelessWidget {
@@ -62,7 +63,19 @@ class ContactUsPage extends StatelessWidget {
             const SizedBox(height: 16,),
             TextFieldWidget(title: "Email"),
             const SizedBox(height: 16,),
-            TextFieldTwo(),
+            GlobalTextFieldWidget(hintText:"Your mobile number",prefix:
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                children: [
+                  Image(image: AssetImage(MyImage.bdFlag)),
+                  const SizedBox(width: 8,),
+                  SvgPicture.asset(MyImage.downArrowIcon),
+                ],
+              ),
+            ),
+            ),
+
             const SizedBox(height: 16,),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),

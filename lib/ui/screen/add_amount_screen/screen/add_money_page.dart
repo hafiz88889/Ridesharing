@@ -11,6 +11,8 @@ class AddMoneyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColor.whiteColor,
+
       bottomNavigationBar:Padding(
         padding: const EdgeInsets.all(15.0),
         child: SizedBox(
