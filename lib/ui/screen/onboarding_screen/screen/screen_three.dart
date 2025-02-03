@@ -28,27 +28,37 @@ class OnBoardingPageThree extends StatelessWidget {
               const SizedBox(height: 10,),
               Text("Sell houses easily with the helpof\n Listenoryx and to make this line big I\n am writing more",style: regularTextStyleHintText16.copyWith(color: MyColor.normalTextColor,fontSize: 14),),
               const  SizedBox(height: 168,),
-              Container(
-                height: 90,
-                width: 90,
-                padding: const EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: MyColor.buttonColor,width: 4)
-                ),
-                child: InkWell(
-                  onTap: (){
-                    Navigator.pushNamed(context,"/EnableLocationPage");
-                  },
-                  child: Container(
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: MyColor.buttonColor
-                      ),
-                      child:Center(child: Text("Go",style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 20),))
+              Stack(
+                children: [
+                  SizedBox(
+                    height: 90,
+                    width: 90,
+                    child: CircularProgressIndicator(
+                      color: MyColor.primaryColor,
+                      value: 1,
+                      backgroundColor: MyColor.primaryColor.withAlpha(50),
+                    ),
                   ),
-                ),
-              )
+                  Positioned(
+                    top: 10,
+                    left: 10,
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.pushNamed(context,"/EnableLocationPage");
+                      },
+                      child: Container(
+                        height: 70,
+                        width: 70,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: MyColor.primaryColor
+                        ),
+                          child:Center(child: Text("Go",style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 20),))
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
@@ -56,3 +66,7 @@ class OnBoardingPageThree extends StatelessWidget {
     );
   }
 }
+
+// child:Center(child: Text("Go",style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 20),))
+// Navigator.pushNamed(context,"/EnableLocationPage");
+//

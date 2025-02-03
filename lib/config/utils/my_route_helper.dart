@@ -6,6 +6,7 @@ import 'package:rideshare/ui/screen/calling_screen/calling_screen/screen/calling
 import 'package:rideshare/ui/screen/calling_screen/reciving_screen/screen/recived_cell.dart';
 import 'package:rideshare/ui/screen/change_language/screen/change_language.dart';
 import 'package:rideshare/ui/screen/change_password/screen/change_password_screen.dart';
+import 'package:rideshare/ui/screen/chatting_screen/chatting_page.dart';
 import 'package:rideshare/ui/screen/complain_screen/screen/complain_page.dart';
 import 'package:rideshare/ui/screen/contact_us_screen/screen/contact_us_page.dart';
 import 'package:rideshare/ui/screen/delet_account_screen/screen/delect_page.dart';
@@ -14,7 +15,6 @@ import 'package:rideshare/ui/screen/help_and_support_screen/screen/help_and_supp
 import 'package:rideshare/ui/screen/history_screen/screen/history_page.dart';
 import 'package:rideshare/ui/screen/home_screen/screen/home_page.dart';
 import 'package:rideshare/ui/screen/location_screen_confirm/screen/location_screen_confirm.dart';
-import 'package:rideshare/ui/screen/message_screen/screen/chatting_page.dart';
 import 'package:rideshare/ui/screen/notification_screen/screen/notification_page.dart';
 import 'package:rideshare/ui/screen/offer_screen/screen/offer_page.dart';
 import 'package:rideshare/ui/screen/onboarding_screen/screen/screen_one.dart';
@@ -33,6 +33,7 @@ import 'package:rideshare/ui/screen/sign_up_screen/screen/set_password_page.dart
 import 'package:rideshare/ui/screen/sign_up_screen/screen/sign_in_page.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/screen/sign_up_page.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/screen/vefication_page.dart';
+import 'package:rideshare/ui/screen/sign_up_screen/widget/dropdown_widget.dart';
 import 'package:rideshare/ui/screen/transport_screen/available_car_screen/screen/avaiable_page.dart';
 import 'package:rideshare/ui/screen/transport_screen/available_car_screen/screen/available_car_two.dart';
 import 'package:rideshare/ui/screen/transport_screen/car_details_screen/screen/car_details_page.dart';
@@ -87,6 +88,8 @@ class RouteHelper{
   static String deletePage="/DeletePage";
   static String helpAndSupportPage="/HelpAndSupportPage";
   static String privacyPolicyPage="/PrivacyPolicyPage";
+  static String chatScreen="/ChatScreen";
+  static String dropdownExample="/DropdownExample";
 
 
   static Map<String,WidgetBuilder>getRoute(){
@@ -114,7 +117,6 @@ class RouteHelper{
       RouteHelper.requestRentPageTwo:(context)=>const RequestRentPageTwo(),
       RouteHelper.thankYouScreen:(context)=>const ThankYouScreen(),
       RouteHelper.locationScreenConfirm:(context)=>const LocationScreenConfirm(),
-      RouteHelper.chattingPage:(context)=>const ChattingPage(),
       RouteHelper.callingPage:(context)=>const CallingPage(),
       RouteHelper.recevingPage:(context)=>const RecevingPage(),
       RouteHelper.paymentPage:(context)=>const PaymentPage(),
@@ -134,6 +136,8 @@ class RouteHelper{
       RouteHelper.deletePage:(context)=> const DeletePage(),
       RouteHelper.helpAndSupportPage:(context)=> const HelpAndSupportPage(),
       RouteHelper.privacyPolicyPage:(context)=> const PrivacyPolicyPage(),
+      RouteHelper.chattingPage:(context)=>  ChatScreen(),
+      RouteHelper.dropdownExample:(context)=>  DropdownExample(),
     };
   }
 }

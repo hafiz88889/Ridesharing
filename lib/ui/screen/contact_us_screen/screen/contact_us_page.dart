@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
@@ -13,29 +14,18 @@ class ContactUsPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: MyColor.whiteColor,
         scrolledUnderElevation: 0,
-        leading:
-        ConstrainedBox(
-          constraints: const BoxConstraints.tightFor(width: 40), // Custom width
-          child:IconButton(
-              padding: EdgeInsets.zero,
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
-        ),
-        title: Row(
+        centerTitle: true,
+        leadingWidth: 100,
+        leading:Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              "Back",
-              style: regularTextStyleHintText16.copyWith(color: MyColor.textColor),
-            ),
-            const Spacer(),
-            Text(
-              "Contact us",
-              style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 18),
-            ),
-            const Spacer(),
+            IconButton(onPressed: (){Navigator.pop(context);}, icon:Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+            const Text("Back")
           ],
+        ),
+        title: Text(
+          "Contact us",
+          style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 18),
         ),
       ),
       bottomNavigationBar:   Padding(
@@ -62,7 +52,7 @@ class ContactUsPage extends StatelessWidget {
             Text('Contact us for Ride share',style: regularTextStyleHintText16.copyWith(color: MyColor.blackColor),),
             Text('Address',style: regularTextStyleHintText16.copyWith(color: MyColor.blackColor),),
             const SizedBox(height: 10,),
-            Center(child: Text('House# 72, Road# 21, Banani, Dhaka-1213 (near Banani \nBidyaniketon School &\n College, beside University of South Asia) ',style: regularTextStyleHintText16.copyWith(color: MyColor.normalGrayColor,fontSize: 12),)),
+            Center(child: Text('House# 72, Road# 21, Banani, Dhaka-1213 (near Banani \nBidyaniketon School &\n College, beside University of South Asia) ',textAlign: TextAlign.center,style: regularTextStyleHintText16.copyWith(color: MyColor.normalGrayColor,fontSize: 12),)),
             const SizedBox(height: 20,),
       Text('Call : 13301 (24/7) Email : support@pathao.com',style: regularTextStyleHintText16.copyWith(color: MyColor.normalGrayColor,fontSize: 12),),
             const SizedBox(height: 30,),
@@ -72,22 +62,7 @@ class ContactUsPage extends StatelessWidget {
             const SizedBox(height: 16,),
             TextFieldWidget(title: "Email"),
             const SizedBox(height: 16,),
-            TextFieldWidgetTwo(
-              title: "01867221168",
-              icon: const Text(""),
-              icons: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  children: [
-                    Image(image: AssetImage(MyImage.bdFlag)),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Image(image: AssetImage(MyImage.backIconDown))
-                  ],
-                ),
-              ),
-            ),
+            TextFieldTwo(),
             const SizedBox(height: 16,),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),

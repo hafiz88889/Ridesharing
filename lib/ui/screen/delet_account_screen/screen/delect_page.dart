@@ -12,26 +12,18 @@ class DeletePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: MyColor.whiteColor,
         scrolledUnderElevation: 0,
-        leading:
-        IconButton(
-            padding: EdgeInsets.zero,
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
-        title: Row(
+        centerTitle: true,
+        leadingWidth: 100,
+        leading:Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              "Back",
-              style: regularTextStyleHintText16.copyWith(color: MyColor.textColor),
-            ),
-            const Spacer(),
-            Text(
-              "Delete Account",
-              style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 18),
-            ),
-            const Spacer(),
+            IconButton(onPressed: (){Navigator.pop(context);}, icon:Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+            const Text("Back")
           ],
+        ),
+        title: Text(
+          "Delet Account",
+          style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 18),
         ),
       ),
       backgroundColor: MyColor.whiteColor,
@@ -55,7 +47,7 @@ class DeletePage extends StatelessWidget {
                         backgroundColor: WidgetStateProperty.all(MyColor.redColor),
                         shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)))
                     ),
-                    child: Text("Sign up",style: regularTextStyleHintText16.copyWith(color: MyColor.whiteColor),)),
+                    child: Text("Delete",style: regularTextStyleHintText16.copyWith(color: MyColor.whiteColor),)),
               ),
             ],
           ),

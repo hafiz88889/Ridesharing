@@ -19,37 +19,23 @@ class _SelectTransportScreenState extends State<SelectTransportScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColor.whiteColor,
-      appBar: AppBar(
-        backgroundColor: MyColor.whiteColor,
-        scrolledUnderElevation: 0,
-        leading:
-        ConstrainedBox(
-          constraints: const BoxConstraints.tightFor(width: 40), // Custom width
-          child:IconButton(
-              padding: EdgeInsets.zero,
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+        appBar: AppBar(
+          backgroundColor: MyColor.whiteColor,
+          scrolledUnderElevation: 0,
+          centerTitle: true,
+          leadingWidth: 100,
+          leading:Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(onPressed: (){Navigator.pop(context);}, icon:Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+              const Text("Back")
+            ],
+          ),
+          title: Text(
+            "Select Transport                                                                                                                                      ",
+            style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 18),
+          ),
         ),
-        title: Row(
-          children: [
-            Text(
-              "Back",
-              style: regularTextStyleHintText16.copyWith(color: MyColor.textColor),
-            ),
-            const Spacer(),
-            InkWell(
-              onTap: (){Navigator.pushNamed(context, "/AvaiablePage");},
-              child: Text(
-                "Select Transport",
-                style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 18),
-              ),
-            ),
-            const Spacer(),
-          ],
-        ),
-      ),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
@@ -61,7 +47,7 @@ class _SelectTransportScreenState extends State<SelectTransportScreen> {
           Product product=productList[index];
           return InkWell(
             onTap: (){
-              print("${product.title}");
+              Navigator.pushNamed(context, "/AvaiablePage");
             },
             child: Container(
               margin: const EdgeInsets.all(10),

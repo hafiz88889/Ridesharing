@@ -15,9 +15,15 @@ class AvaiablePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: MyColor.whiteColor,
         scrolledUnderElevation: 0,
-        title: Text("Back",style: regularTextStyleHintText16.copyWith(color: MyColor.textColor),),
-        leading: IconButton(onPressed: (){}, icon: Image(image: AssetImage(MyImage.backIcontop)),
-      ),
+        leadingWidth: 100,
+        leading:Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(onPressed: (){Navigator.pop(context);}, icon:Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+            const Text("Back")
+          ],
+        ),
+
       ),
       body: Padding(padding: EdgeInsets.all(20),
       child: SingleChildScrollView(

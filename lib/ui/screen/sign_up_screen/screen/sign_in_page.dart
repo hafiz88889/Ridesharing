@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
+import 'package:rideshare/ui/global_widget/text_field_widget.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/outline_button_widget.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/set_password_text_field.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/text_field_widget.dart';
@@ -16,14 +18,13 @@ class SignInPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: MyColor.whiteColor,
         scrolledUnderElevation: 0,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Image(image: AssetImage(MyImage.backIcontop))),
-        title: Text(
-          "Back",
-          style: regularTextStyleHintText16.copyWith(color: MyColor.textColor),
+        leadingWidth: 100,
+        leading:Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(onPressed: (){Navigator.pop(context);}, icon:Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+            const Text("Back")
+          ],
         ),
       ),
       body: Padding(padding: const EdgeInsets.all(20),
@@ -38,9 +39,12 @@ class SignInPage extends StatelessWidget {
               style: regularTextStyle24,
             ),
             const SizedBox(height: 40,),
-            const TextFieldWidget(title: "Email or phone number"),
+            const GlobalTextFieldWidget(hintText: "Enter your phone number or email"),
             const SizedBox(height: 20,),
-            SetPasswordTextField(title: "Enter Your Password", icon: Image(image: AssetImage(MyImage.visibilityoff))),
+            GlobalTextFieldWidget(hintText: "Enter your password",suffix: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: SvgPicture.asset(MyImage.visibilityOffIcon),
+            ),),
             const SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,

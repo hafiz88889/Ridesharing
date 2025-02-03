@@ -271,8 +271,13 @@ class _HomePageState extends State<HomePage> {
                               child: OutlinedButton(
                                   onPressed: () {
                                     showModalBottomSheet(context: context, builder: (BuildContext context){
-                                      return const FractionallySizedBox(
+                                      return FractionallySizedBox(
                                         heightFactor: 0.75,
+                                      // child:  Container(
+                                      //   height: double.infinity,
+                                      //   width: double.infinity,
+                                      //   //color: MyColor.whiteColor,
+                                      // ),
                                         child: SelectAddressBottomsheet(),
                                       );
 

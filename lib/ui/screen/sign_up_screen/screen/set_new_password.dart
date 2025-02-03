@@ -29,14 +29,13 @@ class SetNewPassword extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: MyColor.whiteColor,
         scrolledUnderElevation: 0,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Image(image: AssetImage(MyImage.backIcontop))),
-        title: Text(
-          "Back",
-          style: regularTextStyleHintText16.copyWith(color: MyColor.textColor),
+        leadingWidth: 100,
+        leading:Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(onPressed: (){Navigator.pop(context);}, icon:Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+            const Text("Back")
+          ],
         ),
       ),
       body: Padding(padding: const EdgeInsets.all(20),

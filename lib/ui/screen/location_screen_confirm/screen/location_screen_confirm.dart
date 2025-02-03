@@ -17,7 +17,7 @@ class LocationScreenConfirm extends StatelessWidget {
               context: context, builder: (BuildContext context){
             return const FractionallySizedBox(
                  heightFactor: 0.55,
-                child: ModelBottomSheetLocationScreen(),
+                child: ModelBottomSheetLocationScreen()
 
             );
           });

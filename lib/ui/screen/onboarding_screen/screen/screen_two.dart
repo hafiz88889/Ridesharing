@@ -29,28 +29,38 @@ class OnBoardingPageTwo extends StatelessWidget {
               const SizedBox(height: 10,),
               Text("Sell houses easily with the helpof\n Listenoryx and to make this line big I\n am writing more",style: regularTextStyleHintText16.copyWith(color: MyColor.normalTextColor,fontSize: 14),),
               const  SizedBox(height: 168,),
-              Container(
-                height: 90,
-                width: 90,
-                padding: const EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: MyColor.buttonColor,width: 4)
-                ),
-                child: InkWell(
-                  onTap: (){
-                    Navigator.pushNamed(context, "/onBoardingPageThree");
-                  },
-                  child: Container(
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: MyColor.buttonColor
-                      ),
-                      child: Image(image: AssetImage(MyImage.backIconarrow),height: 18,width: 18,color: MyColor.textColor,)
+              Stack(
+                children: [
+                  SizedBox(
+                    height: 90,
+                    width: 90,
+                    child: CircularProgressIndicator(
+                      color: MyColor.primaryColor,
+                      value: 0.66,
+                      backgroundColor: MyColor.primaryColor.withAlpha(50),
+                    ),
                   ),
-                ),
-                //child:SvgPicture.asset(MyImage.backIcon,height:20,width:20,colorFilter: ColorFilter.mode(MyColor.textColor, BlendMode.srcIn),),
-              ),
+                  Positioned(
+                    top: 10,
+                    left: 10,
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.pushNamed(context, "/onBoardingPageThree");
+                      },
+                      child: Container(
+                        height: 70,
+                        width: 70,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: MyColor.primaryColor
+                        ),
+                        child: Image(image: AssetImage(MyImage.backIconarrow),height: 18,width: 18,color: MyColor.textColor,),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+
             ],
           ),
         ),
@@ -58,3 +68,4 @@ class OnBoardingPageTwo extends StatelessWidget {
     );
   }
 }
+

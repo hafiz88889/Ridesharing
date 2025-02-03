@@ -22,29 +22,17 @@ class _NotificationPageState extends State<NotificationPage> {
         backgroundColor: MyColor.whiteColor,
         scrolledUnderElevation: 0,
         centerTitle: true,
+        leadingWidth: 100,
+        leading:Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(onPressed: (){Navigator.pop(context);}, icon:Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+            const Text("Back")
+          ],
+        ),
         title: Text(
           "Notification",
-          style: regularTextStyleHintText16.copyWith(
-              color: MyColor.blackColori, fontSize: 18),
-        ),
-        leading: Row(
-          children: [
-            IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                padding: EdgeInsets.zero,
-                icon: Image(
-                  image: AssetImage(MyImage.backIcontop),
-                  height: 15,
-                  width: 15,
-                )),
-            Text(
-              "Back",
-              style: regularTextStyleHintText16.copyWith(
-                  color: MyColor.blackColori),
-            ),
-          ],
+          style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 18),
         ),
       ),
       body: Padding(

@@ -38,7 +38,6 @@ class SelectAddressBottomsheet extends StatelessWidget {
                   width: 100,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: MyColor.greyColor
                   ),
                 ),
                 const Spacer(),
@@ -68,7 +67,6 @@ class SelectAddressBottomsheet extends StatelessWidget {
               margin: EdgeInsets.only(left: 7),
               height: 40,
               width: 2,
-              color: MyColor.buttonColor,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,

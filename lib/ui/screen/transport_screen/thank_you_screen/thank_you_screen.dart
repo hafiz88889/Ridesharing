@@ -13,25 +13,12 @@ class ThankYouScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: MyColor.whiteColor,
         scrolledUnderElevation: 0,
-        leading:
-        ConstrainedBox(
-          constraints: const BoxConstraints.tightFor(width: 40), // Custom width
-          child: IconButton(
-              padding: EdgeInsets.zero,
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: Image(image: AssetImage(MyImage.backIcontop),
-                height: 30,
-                width: 30,)),
-        ),
-        title: Row(
+        leadingWidth: 100,
+        leading:Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              "Back",
-              style: regularTextStyleHintText16.copyWith(
-                  color: MyColor.textColor),
-            ),
+            IconButton(onPressed: (){Navigator.pop(context);}, icon:Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+            const Text("Back")
           ],
         ),
       ),

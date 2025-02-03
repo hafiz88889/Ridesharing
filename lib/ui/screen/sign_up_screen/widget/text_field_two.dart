@@ -1,33 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
-import 'package:rideshare/config/utils/text_style.dart';
+import 'package:rideshare/ui/global_widget/text_field_widget.dart';
 
-class TextFieldWidgetTwo extends StatelessWidget {
-  final String title;
-  final Widget icons;
-  final Widget icon;
-  const TextFieldWidgetTwo({super.key,
-    required this.title,
-    required this.icons,
-    required this.icon,
-  });
+class TextFieldTwo extends StatefulWidget {
+  const TextFieldTwo({super.key});
 
   @override
+  State<TextFieldTwo> createState() => _TextFieldTwoState();
+}
+String dropdownValue="one";
+class _TextFieldTwoState extends State<TextFieldTwo> {
+  @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        prefixIcon:Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: icons,
+    return GlobalTextFieldWidget(hintText: "+8801867221168",
+      prefix:Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+        child: DropdownButton<String>(
+          dropdownColor: MyColor.whiteColor,
+          value: dropdownValue,
+          icon: SvgPicture.asset(MyImage.downArrowIcon),
+          onChanged: (String? newValue){
+            setState(() {
+              dropdownValue=newValue!;
+            });
+          },
+          items: const [
+            DropdownMenuItem(
+              value: "one",
+              child: Text("One"),
+            ),
+            DropdownMenuItem(
+              value: "Two",
+              child: Text("two"),
+            ),
+            DropdownMenuItem(
+              value: "three",
+              child: Text("three"),
+            ),
+          ],
+
         ),
-          suffixIcon: icon,
-          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: MyColor.visibilityTextColor)),
-          hintText:title,hintStyle: regularTextStyleHintText16 ,
-          enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: MyColor.visibilityTextColor)),
-          border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12)
-          )
-      ),
-    );
+      )
+      ,);
   }
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
-import 'package:rideshare/ui/screen/sign_up_screen/widget/set_password_text_field.dart';
+import 'package:rideshare/ui/global_widget/text_field_widget.dart';
 
 class SetPasswordPage extends StatelessWidget {
   const SetPasswordPage({super.key});
@@ -29,14 +30,13 @@ class SetPasswordPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: MyColor.whiteColor,
         scrolledUnderElevation: 0,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Image(image: AssetImage(MyImage.backIcontop))),
-        title: Text(
-          "Back",
-          style: regularTextStyleHintText16.copyWith(color: MyColor.textColor),
+        leadingWidth: 100,
+        leading:Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(onPressed: (){Navigator.pop(context);}, icon:Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+            const Text("Back")
+          ],
         ),
       ),
       body: Padding(padding: const EdgeInsets.all(20),
@@ -55,9 +55,15 @@ class SetPasswordPage extends StatelessWidget {
             ),
             Center(child: Text("Set your password",style: regularTextStyleHintText16.copyWith(color: MyColor.normalTextColor),)),
             const SizedBox(height: 40,),
-            SetPasswordTextField(title: "Enter your password", icon: Image(image: AssetImage(MyImage.visibilityoff))),
+            GlobalTextFieldWidget(hintText: "Enter our password",suffix: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SvgPicture.asset(MyImage.visibilityOffIcon),
+            )),
             const SizedBox(height: 20,),
-            SetPasswordTextField(title: "Confirms your password", icon: Image(image: AssetImage(MyImage.visibilityoff))),
+            GlobalTextFieldWidget(hintText: "Enter our password",suffix: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SvgPicture.asset(MyImage.visibilityOffIcon),
+            )),
             const SizedBox(height: 10,),
             Text("Atleast 1 number or a special character",style: regularTextStyleHintText16.copyWith(fontSize: 14),),
             const SizedBox(height: 43,),

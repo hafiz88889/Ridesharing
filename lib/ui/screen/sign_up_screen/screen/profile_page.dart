@@ -1,43 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
+import 'package:rideshare/ui/global_widget/text_field_widget.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/text_field_two.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/text_field_widget.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+String dropdownValue="one";
+class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColor.whiteColor,
-     appBar: AppBar(
-       backgroundColor: MyColor.whiteColor,
-       scrolledUnderElevation: 0,
-        leading:
-       ConstrainedBox(
-         constraints: const BoxConstraints.tightFor(width: 40), // Custom width
-         child:IconButton(
-             padding: EdgeInsets.zero,
-             onPressed: () {
-               Navigator.pop(context);
-             },
-             icon: Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
-       ),
-        title: Row(
+      appBar: AppBar(
+        backgroundColor: MyColor.whiteColor,
+        scrolledUnderElevation: 0,
+        centerTitle: true,
+        leadingWidth: 100,
+        leading:Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              "Back",
-              style: regularTextStyleHintText16.copyWith(color: MyColor.textColor),
-            ),
-            const Spacer(),
-            Text(
-              "Profile",
-              style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 18),
-            ),
-            const Spacer(),
+            IconButton(onPressed: (){Navigator.pop(context);}, icon:Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+            const Text("Back")
           ],
+        ),
+        title: Text(
+          "Profile",
+          style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 18),
         ),
       ),
       bottomNavigationBar:  Padding(
@@ -106,39 +102,84 @@ class ProfilePage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 30,),
-            const TextFieldWidget(title: "Full Name"),
+            const GlobalTextFieldWidget(hintText: "Full Name"),
             const SizedBox(height: 20,),
-            TextFieldWidgetTwo(
-              title: "01867221168",
-              icon: const Text(""),
-              icons: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  children: [
-                    Image(image: AssetImage(MyImage.bdFlag)),
-                    const SizedBox(
-                      width: 10,
+            const TextFieldTwo(),
+            const SizedBox(height: 20,),
+            const GlobalTextFieldWidget(hintText: "Email"),
+            const SizedBox(height: 20,),
+            const GlobalTextFieldWidget(hintText: "Street"),
+            const SizedBox(height: 20,),
+            GlobalTextFieldWidget(hintText: "City",
+                suffix: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+                  child: DropdownButton<String>(
+                    hint: const Text("Select city"),
+                    dropdownColor: MyColor.whiteColor,
+                    value: dropdownValue,
+                    icon: SvgPicture.asset(MyImage.downArrowIcon),
+                    onChanged: (String? newValue){
+                      setState(() {
+                        dropdownValue=newValue!;
+                      });
+                    },
+                    items: const [
+                      DropdownMenuItem(
+                        value: "one",
+                        child: Text("Dhaka"),
+                      ),
+                      DropdownMenuItem(
+                        value: "Two",
+                        child: Text("Chittagong"),
+                      ),
+                      DropdownMenuItem(
+                        value: "three",
+                        child: Text("coxbazar"),
+                      ),
+                      DropdownMenuItem(
+                        value: "four",
+                        child: Text("Chittagong"),
+                      ),
+                    ],
+
+                  ),
+                ),
+            ),
+            const SizedBox(height: 20,),
+            GlobalTextFieldWidget(hintText: "City",
+              suffix: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+                child: DropdownButton<String>(
+                  hint: Text("Select city"),
+                  dropdownColor: MyColor.whiteColor,
+                  value: dropdownValue,
+                  icon: SvgPicture.asset(MyImage.downArrowIcon),
+                  onChanged: (String? newValue){
+                    setState(() {
+                      dropdownValue=newValue!;
+                    });
+                  },
+                  items: const [
+                    DropdownMenuItem(
+                      value: "one",
+                      child: Text("Dhaka"),
                     ),
-                    Image(image: AssetImage(MyImage.backIconDown))
+                    DropdownMenuItem(
+                      value: "Two",
+                      child: Text("Chittagong"),
+                    ),
+                    DropdownMenuItem(
+                      value: "three",
+                      child: Text("coxbazar"),
+                    ),
+                    DropdownMenuItem(
+                      value: "four",
+                      child: Text("Chittagong"),
+                    ),
                   ],
+
                 ),
               ),
-            ),
-            const SizedBox(height: 20,),
-            const TextFieldWidget(title: "Email"),
-            const SizedBox(height: 20,),
-            const TextFieldWidget(title: "Street"),
-            const SizedBox(height: 20,),
-            TextFieldWidgetTwo(
-              title: "City",
-              icon: Image(image: AssetImage(MyImage.backIconDown)),
-              icons: const Text(""),
-            ),
-            const SizedBox(height: 20,),
-            TextFieldWidgetTwo(
-              title: "District",
-              icon: Image(image: AssetImage(MyImage.backIconDown)),
-              icons: const Text(""),
             ),
             const SizedBox(height: 40,),
 

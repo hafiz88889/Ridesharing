@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
+import 'package:rideshare/ui/global_widget/text_field_widget.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/text_field_widget.dart';
 
 class SendVerificationPage extends StatelessWidget {
@@ -49,7 +50,7 @@ class SendVerificationPage extends StatelessWidget {
               style: regularTextStyle24,
             ),
             const SizedBox(height: 40,),
-            const TextFieldWidget(title: "Email or phone number")
+            GlobalTextFieldWidget(hintText: "Email or phone number")
           ],
         ),
       ),

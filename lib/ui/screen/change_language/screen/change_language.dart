@@ -19,24 +19,18 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
       appBar: AppBar(
         backgroundColor: MyColor.whiteColor,
         scrolledUnderElevation: 0,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Image(image: AssetImage(MyImage.backIcontop))),
-        title: Row(
+        centerTitle: true,
+        leadingWidth: 100,
+        leading:Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              "Back",
-              style: regularTextStyleHintText16.copyWith(color: MyColor.textColor),
-            ),
-            const Spacer(),
-            Text(
-              "Change Language",
-              style: regularTextStyleHintText16.copyWith(color: MyColor.blackColor),
-            ),
-            const Spacer(),
+            IconButton(onPressed: (){Navigator.pop(context);}, icon:Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+            const Text("Back")
           ],
+        ),
+        title: Text(
+          "Change Language",
+          style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 18),
         ),
       ),
       backgroundColor: MyColor.whiteColor,

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
+import 'package:rideshare/ui/global_widget/text_field_widget.dart';
+import 'package:rideshare/ui/screen/sign_up_screen/widget/dropdown_widget.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/outline_button_widget.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/text_field_two.dart';
-import 'package:rideshare/ui/screen/sign_up_screen/widget/text_field_widget.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -21,15 +23,15 @@ class _SignUpPageState extends State<SignUpPage> {
       appBar: AppBar(
         backgroundColor: MyColor.whiteColor,
         scrolledUnderElevation: 0,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Image(image: AssetImage(MyImage.backIcontop))),
-        title: Text(
-          "Back",
-          style: regularTextStyleHintText16.copyWith(color: MyColor.textColor),
+        leadingWidth: 100,
+        leading:Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(onPressed: (){Navigator.pop(context);}, icon:Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+            const Text("Back")
+          ],
         ),
+
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -46,42 +48,19 @@ class _SignUpPageState extends State<SignUpPage> {
               const SizedBox(
                 height: 30,
               ),
-              const TextFieldWidget(
-                title: "Name",
-              ),
+              const GlobalTextFieldWidget(hintText: "Name",),
               const SizedBox(
                 height: 20,
               ),
-              const TextFieldWidget(
-                title: "Email",
-              ),
+              const GlobalTextFieldWidget(hintText: "Email"),
               const SizedBox(
                 height: 20,
               ),
-              TextFieldWidgetTwo(
-                title: "01867221168",
-                icon: const Text(""),
-                icons: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    children: [
-                      Image(image: AssetImage(MyImage.bdFlag)),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Image(image: AssetImage(MyImage.backIconDown))
-                    ],
-                  ),
-                ),
-              ),
+              DropdownExample(),
               const SizedBox(
                 height: 20,
               ),
-              TextFieldWidgetTwo(
-                title: "Gender",
-                icon: Image(image: AssetImage(MyImage.backIconDown)),
-                icons: const Text(""),
-              ),
+
               const SizedBox(height: 20,),
               Row(
                 children: [

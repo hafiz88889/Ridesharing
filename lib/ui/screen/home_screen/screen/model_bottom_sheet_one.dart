@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rideshare/config/utils/custom_image.dart';
 import 'package:rideshare/config/utils/my_color.dart';
 import 'package:rideshare/config/utils/text_style.dart';
+import 'package:rideshare/ui/global_widget/text_field_widget.dart';
 import 'package:rideshare/ui/screen/home_screen/widget/place_location_widget.dart';
 import 'package:rideshare/ui/screen/sign_up_screen/widget/text_field_two.dart';
 
@@ -39,9 +40,17 @@ class ModelBottomSheetOne extends StatelessWidget {
               const SizedBox(height: 12,),
               const Divider(),
               const SizedBox(height: 16,),
-              TextFieldWidgetTwo(title: "From", icons: SvgPicture.asset(MyImage.directionIcon), icon: Text("")),
+              GlobalTextFieldWidget(
+                hintText: "From",prefix: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: SvgPicture.asset(MyImage.directionIcon),
+              ),),
               const SizedBox(height: 16,),
-              TextFieldWidgetTwo(title: "To", icons: SvgPicture.asset(MyImage.locationIconTwo), icon: Text("")),
+              GlobalTextFieldWidget(
+                hintText: "To",prefix: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: SvgPicture.asset(MyImage.locationIconTwo),
+              ),),
               const SizedBox(height: 16,),
               const Divider(),
               const SizedBox(height: 20,),

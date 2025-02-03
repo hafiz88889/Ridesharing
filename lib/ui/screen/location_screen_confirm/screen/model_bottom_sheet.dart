@@ -1,3 +1,76 @@
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+// import 'package:rideshare/config/utils/my_color.dart';
+//
+// class CoreBottomSheetWidget {
+//   final Widget child;
+//   final bool isNeedPadding;
+//   final VoidCallback? voidCallback;
+//   //final Color bgColor;
+//   final Color? barrierColor;
+//   final bool enableDrag;
+//   final bool isDismissable;
+//   final bool isScrollControlled;
+//   final bool isNeedAnimatedPadding;
+//   final RouteSettings? routeSettings;
+//
+//   CoreBottomSheetWidget({
+//     required this.child,
+//     this.isNeedPadding = false,
+//     this.isScrollControlled = true,
+//     this.enableDrag = true,
+//     this.isDismissable = true,
+//     this.voidCallback,
+//     //this.bgColor = MyColor.greyColor,
+//     this.barrierColor,
+//     this.isNeedAnimatedPadding = true,
+//     this.routeSettings,
+//   });
+//
+//   void show(BuildContext context) {
+//     showModalBottomSheet(
+//       isDismissible: isDismissable,
+//       barrierColor: barrierColor,
+//       isScrollControlled: true,
+//       useSafeArea: true,
+//       context: context,
+//       elevation: 0.0,
+//       routeSettings: routeSettings,
+//       enableDrag: enableDrag,
+//       backgroundColor: MyColor.whiteColor,
+//       shape: const RoundedRectangleBorder(
+//         borderRadius: BorderRadiusDirectional.only(
+//           topEnd: Radius.circular(16),
+//           topStart: Radius.circular(16),
+//         ),
+//       ),
+//       builder: (context) {
+//         return SingleChildScrollView(
+//           // TO-DO I think, singleChildScrollView here is unnecessary
+//             physics: const ClampingScrollPhysics(),
+//             padding: isNeedPadding == true
+//                 ? const EdgeInsetsDirectional.only(
+//               top: 12,
+//             )
+//                 : EdgeInsets.zero,
+//             child: AnimatedPadding(
+//               padding: EdgeInsetsDirectional.only(bottom: isNeedAnimatedPadding ? MediaQuery.of(context).viewInsets.bottom : 0),
+//               duration: const Duration(milliseconds: 500),
+//               curve: Curves.decelerate,
+//               child: ConstrainedBox(
+//                 constraints: BoxConstraints(
+//                   maxHeight: MediaQuery.of(context).size.height * .9, // Limit the bottom sheet to 80% of screen height
+//                 ),
+//                child: child, // Your child widget goes here
+//               ),
+//             ));
+//       },
+//     ).then((value) {
+//       if (voidCallback != null) voidCallback!();
+//     });
+//   }
+// }
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rideshare/config/utils/custom_image.dart';

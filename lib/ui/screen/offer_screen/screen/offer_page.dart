@@ -13,31 +13,27 @@ class OfferPage extends StatelessWidget {
       backgroundColor: MyColor.whiteColor,
       appBar: AppBar(
         backgroundColor: MyColor.whiteColor,
-        automaticallyImplyLeading: false,
-        leading:Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Container(
-            padding: const  EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: MyColor.buttonColor.withAlpha(100),
-            ),
-            child: Image(
-              image: AssetImage(MyImage.menu),
-              height: 25,
-              width: 25,
-            ),
-          ),
-        ),
+        scrolledUnderElevation: 0,
         centerTitle: true,
-        title: Text("Offer",style: regularTextStyleHintText16.copyWith(color: MyColor.carNaneColor,fontSize: 20),),
+        leadingWidth: 100,
+        leading:Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(onPressed: (){Navigator.pop(context);}, icon:Image(image: AssetImage(MyImage.backIcontop),height: 30,width: 30,)),
+            const Text("Back")
+          ],
+        ),
+        title: Text(
+          "Offer",
+          style: regularTextStyleHintText16.copyWith(color: MyColor.textColor,fontSize: 18),
+        ),
       ),
-      body: Padding(padding: EdgeInsets.all(20),
+      body: const Padding(padding: EdgeInsets.all(20),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 10,),
+            SizedBox(height: 10,),
             OfferCardWidget(title1: "15% off", title2: "Black Friday"),
             OfferCardWidget(title1: "5% off", title2: "Crismus"),
             OfferCardWidget(title1: "10% off", title2: "Happy New Year"),

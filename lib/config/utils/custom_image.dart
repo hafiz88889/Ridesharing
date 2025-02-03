@@ -86,4 +86,6 @@ class MyImage{
   static String arrowRight="assets/icons/Right Arrow.svg";
   static String flag1="assets/icons/flag1.svg";
   static String flag="assets/images/Flag1.png";
+  static String visibilityON="assets/images/visibilityon.png";
+  static String visibilityOFF="assets/images/visibilityoff.png";
 }
